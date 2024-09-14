@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master # Cambia a la rama que desees
+  pull_request:  # También se ejecuta en cualquier pull request
+    branches:
+      - master  # Creado en master
 
 jobs:
   deploy:
