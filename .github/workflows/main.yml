@@ -13,16 +13,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "20" # Cambia a la versión de Node.js que necesites
-
+        # Cambiar de directorio a 'frontend' y ejecutar npm install
       - name: Install dependencies
-        run: npm install # O yarn install, según el gestor de paquetes que uses
+        run: |
+          cd frontend
+          npm install
 
+      # Cambiar de directorio a 'frontend' y ejecutar build
       - name: Build project
-        run: npm run build # Cambia el comando según tu proyecto (React, Next.js, etc.)
+        run: |
+          cd frontend
+          npm run build
 
+      # Cambiar de directorio a 'frontend' y desplegar a Vercel
       - name: Deploy to Vercel
-        run: npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }} # Despliegue en producción
+        run: |
+          cd frontend
+          npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
