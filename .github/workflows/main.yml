@@ -16,17 +16,17 @@ jobs:
         # Cambiar de directorio a 'frontend' y ejecutar npm install
       - name: Install dependencies
         run: |
-          cd frontend
+          cd front-end
           npm install
 
       # Cambiar de directorio a 'frontend' y ejecutar build
       - name: Build project
         run: |
-          cd frontend
+          cd front-end
           npm run build
 
       # Cambiar de directorio a 'frontend' y desplegar a Vercel
       - name: Deploy to Vercel
         run: |
-          cd frontend
+          cd front-end
           npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
