@@ -32,4 +32,4 @@ jobs:
       - name: Deploy to Vercel
         run: |
           cd front-end
-          npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }} --confirm
+          npx vercel --prod --token ${{secrets.VERCEL_TOKEN}} --confirm
